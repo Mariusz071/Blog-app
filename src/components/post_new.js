@@ -3,18 +3,23 @@ import { Field, reduxForm } from 'redux-form';
 
 class PostsNew extends Component {
     renderField(field) {
+        //work around for input red outline
+        const { meta: { touched, error } } = field;
+        const className = `form-control ${touched && error ? 'is-invalid' : ''}`;
+
         return (
             <div className="form-group">
                 <label>{field.label}</label>
                 <input
-                    className="form-control"
+                    className={className}
                     type="text"
                     {...field.input}
                 />
-
                 {/*Property auto added to the field object from validate function
                  meta.touched is fields state when it was selected in and selected out*/}
-                {field.meta.touched ? field.meta.error : ''}
+                 <div className="text-danger">
+                    {touched ? error : ''}
+                 </div>
             </div>
         )
     }
