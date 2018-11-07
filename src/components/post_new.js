@@ -11,13 +11,24 @@ class PostsNew extends Component {
                     type="text"
                     {...field.input}
                 />
+
+                {/*Property auto added to the field object from validate function
+                 meta.touched is fields state when it was selected in and selected out*/}
+                {field.meta.touched ? field.meta.error : ''}
             </div>
         )
     }
 
+    onSubmit(values) {
+        console.log(values)
+    }
+
     render() {
+        //handleSubmit is taken from reduxForm helper
+        const { handleSubmit } = this.props;
         return (
-            <form>
+            //if form is valid onSubmit function will run
+            <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
                 <Field name="title"  component={this.renderField} label="Title"/>
                 <Field name="categories"  component={this.renderField} label="Categories"/>
                 <Field name="content"  component={this.renderField} label="Post Content"/>
@@ -47,7 +58,8 @@ function validate(values) {
 
     // if errors object is empty, form will be submitted
     // if errors has any properties redux form will be invalid
-    console.log(errors);
+    //name property of field component and errors.name in validate function must be exactly the same
+    return errors;
 }
 
 export default reduxForm({
