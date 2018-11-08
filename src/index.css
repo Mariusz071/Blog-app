@@ -16,3 +16,7 @@ code {
 #root {
   padding: 3rem;
 }
+
+button {
+  margin-right: 1rem;
+}
