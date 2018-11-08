@@ -10,7 +10,7 @@ import promise from 'redux-promise';
 import reducers from './reducers';
 import PostsIndex from './components/posts_index';
 import PostsNew from './components/post_new';
-
+import PostDisplay from './components/post_display'
 
 serviceWorker.unregister();
 
@@ -23,6 +23,7 @@ ReactDOM.render(
             <div>
                 <Switch>
                     <Route path="/posts/new" component={PostsNew} />
+                    <Route path="/posts/:id" component={PostDisplay} />
                     <Route path="/" component={PostsIndex} />
                 </Switch>
             </div>
