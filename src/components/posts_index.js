@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 
 class PostsIndex extends Component {
     componentDidMount() {
+        //navigating back to home page
         this.props.fetchPosts();
     }
 
