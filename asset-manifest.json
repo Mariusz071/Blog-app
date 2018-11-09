@@ -8,6 +8,6 @@
   "runtime~main.js.map": "/Blog-app/static/js/runtime~main.d73bc018.js.map",
   "static/css/main.cb57d81f.chunk.css.map": "/Blog-app/static/css/main.cb57d81f.chunk.css.map",
   "index.html": "/Blog-app/index.html",
-  "precache-manifest.80b23c6c6a15aec581b5a66abc5be5df.js": "/Blog-app/precache-manifest.80b23c6c6a15aec581b5a66abc5be5df.js",
+  "precache-manifest.189cda013b0680036b63fb046317ab53.js": "/Blog-app/precache-manifest.189cda013b0680036b63fb046317ab53.js",
   "service-worker.js": "/Blog-app/service-worker.js"
 }
