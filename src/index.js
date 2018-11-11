@@ -1,16 +1,18 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './styles/index.scss';
 import * as serviceWorker from './serviceWorker';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 import promise from 'redux-promise';
 
 import reducers from './reducers';
-import PostsIndex from './components/posts_index';
-import PostsNew from './components/post_new';
-import PostDisplay from './components/post_display'
+
+
+import NavBar from './components/main_navbar';
+import MainContainer from './components/main_container';
+import BottomAppBar from './components/footer';
 
 serviceWorker.unregister();
 
@@ -21,11 +23,9 @@ ReactDOM.render(
     <Provider store={createStoreWithMiddleware(reducers)}>
         <BrowserRouter>
             <div>
-                <Switch>
-                    <Route path="/posts/new" component={PostsNew} />
-                    <Route path="/posts/:id" component={PostDisplay} />
-                    <Route path="/" component={PostsIndex} />
-                </Switch>
+                <NavBar/>
+                    <MainContainer/>
+                <BottomAppBar/>
             </div>
         </BrowserRouter>
     </Provider>
