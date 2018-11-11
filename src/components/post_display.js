@@ -26,7 +26,7 @@ class PostDisplay extends Component {
         }
 
         return (
-            <div>
+            <div className="main-container">
                 <Link to="/" className="btn btn-warning">Back to main page</Link>
                 <button className="btn btn-danger"
                         onClick={e => this.onClickDeleteHandler(e)}>
