@@ -1,10 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import { withStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
+
 
 
 const styles = {
@@ -29,7 +31,9 @@ function NavBar(props) {
                     <Typography variant="h6" color="inherit" className={classes.grow}>
                         BlogSimple
                     </Typography>
-                    <Button variant="contained" color="secondary">Login</Button>
+                    <Link to="/login" style={ {textDecoration: "none"} }>
+                        <Button variant="contained" color="secondary">Login</Button>
+                    </Link>
                 </Toolbar>
             </AppBar>
         </div>
