@@ -5,5 +5,7 @@ Simple blog app build with:
 - Redux
 - Lodash
 - Bootstrap
+- SASS
+- Material UI
 
 Link for deployed built: https://mariusz071.github.io/Blog-app/
