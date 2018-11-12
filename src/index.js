@@ -23,7 +23,7 @@ ReactDOM.render(
     <Provider store={createStoreWithMiddleware(reducers)}>
         <BrowserRouter>
             <div>
-                <NavBar/>
+                <NavBar />
                     <MainContainer/>
                 <BottomAppBar/>
             </div>
