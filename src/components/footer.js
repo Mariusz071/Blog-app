@@ -20,9 +20,14 @@ const styles = theme => ({
         justifyContent: 'space-between',
     },
     iconButton: {
-        color: "#797979"
-    }
+        color: "#797979",
+    },
+    iconButtonHovered: "black"
 });
+
+
+
+
 
 
 
@@ -32,10 +37,11 @@ function BottomAppBar(props) {
         <AppBar position="fixed" color="primary" className={classes.appBar}>
             <Toolbar className={classes.toolbar}>
                 <div>
-                    <IconButton className={classes.iconButton}>
+                    <IconButton className={classes.iconButton} href="https://github.com/Mariusz071">
                             <i className="fab fa-github-square"></i>
                     </IconButton>
-                    <IconButton className={classes.iconButton}>
+                    <IconButton className={classes.iconButton}
+                                href="https://www.linkedin.com/in/mariusz-siewruk-js-developer/">
                         <i className="fab fa-linkedin"></i>
                     </IconButton>
                 </div>
