@@ -16,23 +16,32 @@ const styles = {
     grow: {
         flexGrow: 1,
     },
-    menuButton: {
-        marginLeft: -12,
-        marginRight: 20,
+    AppBar: {
+        background: "rgba(0,0,0,.7)",
+        color: "#FCDA02"
+
     },
+    Button: {
+        color: "#FFF"
+    },
+    Logo: {
+        fontFamily: "Permanent Marker",
+        letterSpacing: "2px",
+        wordSpacing: "4px"
+    }
 };
 
 function NavBar(props) {
     const { classes } = props;
     return (
-        <div className={classes.root}>
-            <AppBar position="static">
+        <div className={classes.root }>
+            <AppBar position="absolute" style={styles.AppBar}>
                 <Toolbar>
-                    <Typography variant="h6" color="inherit" className={classes.grow}>
+                    <Typography variant="h6" color="inherit" className={classes.grow} style={styles.Logo}>
                         BlogSimple
                     </Typography>
                     <Link to="/login" style={ {textDecoration: "none"} }>
-                        <Button variant="contained" color="secondary">Login</Button>
+                        <Button style={styles.Button}>Login</Button>
                     </Link>
                 </Toolbar>
             </AppBar>
