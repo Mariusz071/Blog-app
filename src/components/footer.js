@@ -22,7 +22,8 @@ const styles = theme => ({
     iconButton: {
         color: "#797979",
     },
-    iconButtonHovered: "black"
+    iconButtonHovered: "black",
+    outline: "none"
 });
 
 
