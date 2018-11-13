@@ -21,16 +21,13 @@ const styles = theme => ({
     },
     iconButton: {
         color: "#797979",
+        outline: "none",
+
+        '&:hover': {
+            color: "#444"
+        }
     },
-    iconButtonHovered: "black",
-    outline: "none"
 });
-
-
-
-
-
-
 
 function BottomAppBar(props) {
     const { classes } = props;
