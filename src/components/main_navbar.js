@@ -23,7 +23,7 @@ const styles = {
     },
     Button: {
         color: "#FFF",
-        outline: "none"
+        outline: "none",
     },
     Logo: {
         fontFamily: "Permanent Marker",
