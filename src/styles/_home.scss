@@ -10,14 +10,15 @@
   background-position: center;
   display: flex;
   justify-content: center;
+  text-align: center;
   align-items: center;
 
   &__heading {
-    text-align: center;
     line-height: 1.5;
     color: $color-white;
     font-size: 2rem;
     width: 70%;
+    text-align: center;
 
     &-span {
       font-family: 'Permanent Marker', serif;
