@@ -5,6 +5,9 @@ import { withStyles, MuiThemeProvider, createMuiTheme } from '@material-ui/core/
 import TextField from '@material-ui/core/TextField';
 import yellow from '@material-ui/core/colors/yellow';
 import Button from '@material-ui/core/Button';
+import { connect } from 'react-redux';
+import { getKey } from "../actions";
+import {compose} from "recompose";
 
 const theme = createMuiTheme({
     palette: {
@@ -56,16 +59,16 @@ class LoginInput extends Component {
         this.setState({
             userName: val,
         });
-        console.log(this.state.userName)
     };
 
     submitHandler = (e) => {
         e.preventDefault();
-        console.log(this.state.userName)
+        console.log(this.state.userName);
+        console.log(this.props.userKey);
+        this.props.userKey = this.state.userName
     };
 
     render() {
-
         const { classes } = this.props;
         return <form className={classes.container} autoComplete="off" onSubmit={this.submitHandler} value={this.state.userName}>
             <MuiThemeProvider theme={theme}>
@@ -98,5 +101,18 @@ LoginInput.propTypes = {
     classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(LoginInput);
+
+//export default withStyles(styles)(LoginInput);
+
+const mapStateToProps = state => {
+    console.log(state);
+    return { userKey: state.key }
+};
+
+
+export default compose(
+    withStyles(styles, { name: 'LoginInput' }),
+    connect(mapStateToProps, { getKey })
+)(LoginInput);
+
 
