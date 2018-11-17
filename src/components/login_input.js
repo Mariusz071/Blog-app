@@ -63,13 +63,14 @@ class LoginInput extends Component {
 
     submitHandler = (e) => {
         e.preventDefault();
-        console.log(this.state.userName);
-        console.log(this.props.userKey);
-        this.props.userKey = this.state.userName
+        this.props.getKey(this.state.userName, () => {
+            this.props.history.push('/posts')
+        });
     };
 
     render() {
         const { classes } = this.props;
+        console.log(this.props);
         return <form className={classes.container} autoComplete="off" onSubmit={this.submitHandler} value={this.state.userName}>
             <MuiThemeProvider theme={theme}>
               <TextField required
