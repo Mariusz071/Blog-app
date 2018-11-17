@@ -6,14 +6,25 @@ export const FETCH_SINGLE_POST = 'fetch_single_post';
 export const DELETE_POST = 'delete_post';
 
 const ROOT_URL = 'https://reduxblog.herokuapp.com/api/';
-let API_KEY = `?key=${userName}`;
-export let userName = 'trlololo';
+let API_KEY = ``;
+console.log(API_KEY);
 
-export function getKey(){
+
+
+
+export function getKey(userName, callback) {
+    API_KEY = `?key=${userName}`;
+    const request = axios.get(`${ROOT_URL}/posts${API_KEY}`)
+        .then(() => callback());
+    console.log(API_KEY);
     return {
         type: GET_KEY,
-        payload: API_KEY
-    }
+        payload: {
+            request: request,
+            userName: userName,
+            API_KEY: API_KEY
+        }
+    };
 }
 
 export function fetchPosts() {
