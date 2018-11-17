@@ -1,9 +1,8 @@
 import { GET_KEY } from "../actions";
-import { userName } from '../actions/';
 
-const userKeyReducer = (key = userName, action) => {
+
+const userKeyReducer = (key = null, action) => {
     if (action.type === GET_KEY) {
-        console.log('siaalalal');
         return action.payload;
     }
     return key;
