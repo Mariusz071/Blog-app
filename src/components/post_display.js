@@ -14,7 +14,7 @@ class PostDisplay extends Component {
     onClickDeleteHandler(e) {
         const { id } = this.props.match.params;
         this.props.deletePost(id, () => {
-            this.props.history.push("/");
+            this.props.history.push("/posts");
         });
     }
 
