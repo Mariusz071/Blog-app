@@ -6,11 +6,8 @@ export const FETCH_SINGLE_POST = 'fetch_single_post';
 export const DELETE_POST = 'delete_post';
 
 const ROOT_URL = 'https://reduxblog.herokuapp.com/api/';
-let API_KEY = ``;
+let API_KEY = `?key=Mariusz071`;
 console.log(API_KEY);
-
-
-
 
 export function getKey(userName, callback) {
     API_KEY = `?key=${userName}`;
