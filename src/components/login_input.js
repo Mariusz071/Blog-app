@@ -7,7 +7,7 @@ import yellow from '@material-ui/core/colors/yellow';
 import Button from '@material-ui/core/Button';
 import { connect } from 'react-redux';
 import { getKey } from "../actions";
-import {compose} from "recompose";
+import { compose } from "recompose";
 
 const theme = createMuiTheme({
     palette: {
@@ -91,7 +91,7 @@ class LoginInput extends Component {
                      className={classes.Button}
                      value="send"
              >
-                 Submit user name
+                 Log in
              </Button>
             </MuiThemeProvider>
           </form>;
@@ -101,9 +101,6 @@ class LoginInput extends Component {
 LoginInput.propTypes = {
     classes: PropTypes.object.isRequired,
 };
-
-
-//export default withStyles(styles)(LoginInput);
 
 const mapStateToProps = state => {
     console.log(state);
