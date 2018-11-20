@@ -3,8 +3,9 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { fetchSinglePost, deletePost } from "../actions";
 
-class PostDisplay extends Component {
 
+
+class PostDisplay extends Component {
     componentDidMount() {
         //prop provided by react-router
         const { id } = this.props.match.params;
@@ -27,14 +28,20 @@ class PostDisplay extends Component {
 
         return (
             <div className="main-container">
-                <Link to="/" className="btn btn-warning">Back to main page</Link>
-                <button className="btn btn-danger"
-                        onClick={e => this.onClickDeleteHandler(e)}>
-                    Delete post
-                </button>
-                <h3>{post.title}</h3>
-                <h6>Categories: {post.categories}</h6>
-                <p>{post.content}</p>
+                <div className="post-container">
+                    <div className="buttons-container">
+                        <Link to="/" className="btn btn-submit">Back to main page</Link>
+                        <button className="btn btn-cancel"
+                                onClick={e => this.onClickDeleteHandler(e)}>
+                            Delete post
+                        </button>
+                    </div>
+                    <div className="content-container">
+                        <h3 className="content-container__title">{post.title}</h3>
+                        <h6 className="content-container__category">Categories: {post.categories}</h6>
+                        <p className="content-container__content">{post.content}</p>
+                    </div>
+                </div>
             </div>
         )
     }
