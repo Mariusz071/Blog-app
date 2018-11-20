@@ -1,0 +1,21 @@
+// Bootstrap buttons re-styled
+.btn {
+  margin: 1rem 2rem;
+  display: inline-block;
+  background-color: $color-yellow;
+  font-weight: bold;
+  border: none;
+  color: $color-dark-gray;
+
+  &:hover {
+    color: $color-white;
+  }
+}
+
+.btn-submit:hover {
+  background-color: $color-green;
+}
+
+.btn-cancel:hover {
+  background-color: $color-red;
+}
