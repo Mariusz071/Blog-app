@@ -30,7 +30,7 @@ class PostDisplay extends Component {
             <div className="main-container">
                 <div className="post-container">
                     <div className="buttons-container">
-                        <Link to="/" className="btn btn-submit">Back to main page</Link>
+                        <Link to="/posts" className="btn btn-submit">Back your posts</Link>
                         <button className="btn btn-cancel"
                                 onClick={e => this.onClickDeleteHandler(e)}>
                             Delete post
