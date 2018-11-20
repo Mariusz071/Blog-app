@@ -20,9 +20,9 @@ class PostsNew extends Component {
                 />
                 {/*Property auto added to the field object from validate function
                  meta.touched is fields state when it was selected in and selected out*/}
-                 <div className="text-danger">
+                <div className="text-danger">
                     {touched ? error : ''}
-                 </div>
+                </div>
             </div>
         )
     }
@@ -43,8 +43,14 @@ class PostsNew extends Component {
                     <Field name="title"  component={this.renderField} label="Title"/>
                     <Field name="categories"  component={this.renderField} label="Categories"/>
                     <Field name="content"  component={this.renderField} label="Post Content"/>
-                    <button type="submit" className='btn btn-primary'>Submit your post</button>
-                    <Link to="/" className="btn btn-danger">Cancel</Link>
+                    <div className="button-container">
+                        <button type="submit" className='btn btn-primary btn-submit'>
+                            Submit your post
+                        </button>
+                        <Link to="/" className="btn btn-danger btn-cancel">
+                            Back to your posts
+                        </Link>
+                    </div>
                 </form>
             </div>
         )
