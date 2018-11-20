@@ -47,7 +47,7 @@ class PostsNew extends Component {
                         <button type="submit" className='btn btn-primary btn-submit'>
                             Submit your post
                         </button>
-                        <Link to="/" className="btn btn-danger btn-cancel">
+                        <Link to="/posts" className="btn btn-danger btn-cancel">
                             Back to your posts
                         </Link>
                     </div>
