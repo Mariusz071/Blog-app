@@ -42,7 +42,7 @@ const styles = theme => ({
 });
 
 function ListItemLink(props) {
-    return <ListItem button component="a" {...props}/>;
+    return <ListItem button component={Link} {...props}/>;
 }
 
 class PostsIndex extends Component {
@@ -55,7 +55,7 @@ class PostsIndex extends Component {
         return _.map(this.props.posts, post => {
             const { classes } = this.props;
             return (
-                <ListItemLink href={`/posts/${post.id}`} className={classes.ListItem} >
+                <ListItemLink to={`/posts/${post.id}`} className={classes.ListItem} >
                     <ListItemText primary={`${post.title}`}/>
                 </ListItemLink>
             )
