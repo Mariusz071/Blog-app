@@ -28,7 +28,12 @@ const styles = {
     Logo: {
         fontFamily: "Permanent Marker",
         letterSpacing: "2px",
-        wordSpacing: "4px"
+        wordSpacing: "4px",
+        color: "#FCDA02",
+        '&:hover': {
+            textDecoration: "none",
+            color: "inherit"
+        },
     }
 };
 
@@ -38,8 +43,8 @@ function NavBar(props) {
         <div className={classes.root }>
             <AppBar position="absolute" style={styles.AppBar}>
                 <Toolbar>
-                    <Typography variant="h6" color="inherit" className={classes.grow} style={styles.Logo}>
-                        BlogSimple
+                    <Typography variant="h6" color="inherit" className={classes.grow}>
+                        <Link className={classes.Logo} to="/">BlogSimple</Link>
                     </Typography>
                     <Link to="/login" style={ {textDecoration: "none"} }>
                         <Button style={styles.Button}>Login</Button>
