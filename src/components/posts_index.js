@@ -4,55 +4,40 @@ import { connect } from 'react-redux';
 import { fetchPosts } from "../actions";
 import { Link } from 'react-router-dom';
 
-
-import { withStyles, MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+import { withStyles } from '@material-ui/core/styles';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import Button from '@material-ui/core/Button';
-import Divider from '@material-ui/core/Divider';
-import yellow from "@material-ui/core/colors/yellow";
 import { compose } from "recompose";
+import Typography from "@material-ui/core/Typography/Typography";
 
-const theme = createMuiTheme({
-    palette: {
-        primary: yellow,
-    },
-    typography: { useNextVariants: true },
-});
+
 
 const styles = theme => ({
     root: {
-        minWidth: '60%',
-        backgroundColor: 'red',
+        verticalAlign: 'center',
+        width: '60%',
+        height: '50%',
+        backgroundColor: theme.palette.background.paper,
         padding: "2rem 0"
     },
     ListItem: {
         padding: "1rem 0",
         textAlign: "center",
     },
-    heading: {
-        color: "white",
-        marginBottom: "2rem"
-    },
     Button: {
-        color: "#000",
-        backgroundColor: "#FFF",
+        color: "#FFF",
+        backgroundColor: "#000",
         outline: "none",
         margin: "1rem auto",
         '&:hover': {
-            backgroundColor: "#FCDA02"
+            backgroundColor: "#FCDA02",
+            color: "#000"
         },
         '&:active:': {
             outline: "none"
         },
-        ListItemLink: {
-            color: "#FFF",
-            textAlign: "center"
-        },
-        ListItemText: {
-            color: yellow
-        }
     }
 });
 
@@ -70,12 +55,9 @@ class PostsIndex extends Component {
         return _.map(this.props.posts, post => {
             const { classes } = this.props;
             return (
-                <MuiThemeProvider theme={theme}>
-                    <ListItemLink href={`/posts/${post.id}`} className={classes.ListItem} >
-                        <ListItemText inset={ true } className={classes.ListItemText} primary={`${post.title}`}/>
-                        <Divider/>
-                    </ListItemLink>
-                </MuiThemeProvider>
+                <ListItemLink href={`/posts/${post.id}`} className={classes.ListItem} >
+                    <ListItemText primary={`${post.title}`}/>
+                </ListItemLink>
             )
         })
     }
@@ -84,17 +66,17 @@ class PostsIndex extends Component {
         const { classes } = this.props;
         return (
             <div className="main-container">
-                <MuiThemeProvider theme={theme}>
-                    <div className={ classes.root }>
-                        <List component="posts-index" disablePadding={ false }>
-                            <h2 className={classes.heading}>Current posts</h2>
-                            {this.renderPosts()}
-                            <Link to="/posts/new" style={ {textDecoration: "none"} }>
-                                <Button className={classes.Button}>Add a new post</Button>
-                            </Link>
-                        </List>
-                    </div>
-                </MuiThemeProvider>
+                <div className={ classes.root }>
+                    <List component="posts-index" disablePadding={ false }>
+                        <Typography variant="h4" color="textPrimary" style={{ marginBottom: "2rem"}}>
+                            Current posts
+                        </Typography>
+                        {this.renderPosts()}
+                        <Link to="/posts/new" style={{textDecoration: "none"}}>
+                            <Button className={classes.Button}>Add a new post</Button>
+                        </Link>
+                    </List>
+                </div>
             </div>
         )
     }
