@@ -39,7 +39,7 @@ class PostsNew extends Component {
         return (
             //if form is valid onSubmit function will run
             <div className="main-container">
-                <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
+                <form onSubmit={handleSubmit(this.onSubmit.bind(this))} className="form-container">
                     <Field name="title"  component={this.renderField} label="Title"/>
                     <Field name="categories"  component={this.renderField} label="Categories"/>
                     <Field name="content"  component={this.renderField} label="Post Content"/>

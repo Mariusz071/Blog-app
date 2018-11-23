@@ -22,7 +22,7 @@ const styles = theme => ({
     container: {
         display: 'flex',
         flexWrap: 'wrap',
-        width: "50%",
+        minWidth: "50%",
     },
     input: {
         color: "#FFF",
@@ -72,7 +72,7 @@ class LoginInput extends Component {
 
     render() {
         const { classes } = this.props;
-        return <form className={classes.container} autoComplete="off" onSubmit={this.submitHandler} value={this.state.userName}>
+        return <form className={classNames(classes.container, 'input-container')} autoComplete="off" onSubmit={this.submitHandler} value={this.state.userName}>
             <MuiThemeProvider theme={theme}>
               <TextField required
                          id="userKey"

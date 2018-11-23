@@ -11,7 +11,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import Button from '@material-ui/core/Button';
 import { compose } from "recompose";
 import Typography from "@material-ui/core/Typography/Typography";
-
+import classNames from 'classnames';
 
 
 const styles = theme => ({
@@ -66,7 +66,7 @@ class PostsIndex extends Component {
         const { classes } = this.props;
         return (
             <div className="main-container">
-                <div className={ classes.root }>
+                <div className={classNames(classes.root, 'posts-index-container')}>
                     <List component="posts-index" disablePadding={ false }>
                         <Typography variant="h4" color="textPrimary" style={{ marginBottom: "2rem"}}>
                             Current posts

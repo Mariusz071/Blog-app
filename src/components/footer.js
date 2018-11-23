@@ -5,6 +5,7 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
+import classNames from "classnames";
 
 const styles = theme => ({
     list: {
@@ -33,7 +34,7 @@ function BottomAppBar(props) {
     const { classes } = props;
     return (
         <AppBar position="fixed" color="primary" className={classes.appBar}>
-            <Toolbar className={classes.toolbar}>
+            <Toolbar className={classNames(classes.toolbar, "footer")}>
                 <div>
                     <IconButton className={classes.iconButton} href="https://github.com/Mariusz071">
                             <i className="fab fa-github-square"></i>
