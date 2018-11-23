@@ -1,0 +1,22 @@
+@media (max-width: 360px) {
+  .footer {
+    flex-direction: column;
+  }
+}
+
+@media(max-width: 600px) {
+  .input-container {
+    min-width: 70%;
+  }
+}
+
+@media(max-width: 500px) {
+
+  .posts-index-container {
+    min-width: 80%;
+  }
+
+  .form-container {
+    width: 80%;
+  }
+}
